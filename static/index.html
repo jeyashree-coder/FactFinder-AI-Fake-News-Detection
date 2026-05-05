@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FactFinder</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="hero">
+      <p class="eyebrow">Fake news analysis</p>
+      <h1>FactFinder</h1>
+      <p class="hero-copy">Check pasted news text or an article URL, and view confidence scores.</p>
+    </header>
+
+    <main class="grid">
+      <section class="card form-card">
+        <div class="tabs">
+          <button class="tab active" data-tab="text">Analyze Text</button>
+          <button class="tab" data-tab="url">Analyze URL</button>
+        </div>
+
+        <div id="text-panel" class="panel active">
+          <label for="news-text">Paste news content</label>
+          <textarea id="news-text" placeholder="Paste the article, post, or claim here..."></textarea>
+          <button id="predict-text-btn" class="primary-btn">Detect Authenticity</button>
+        </div>
+
+        <div id="url-panel" class="panel">
+          <label for="news-url">Enter article URL</label>
+          <input id="news-url" type="url" placeholder="https://example.com/article">
+          <button id="predict-url-btn" class="primary-btn">Analyze Link</button>
+        </div>
+      </section>
+
+      <section class="card result-card">
+        <div class="section-head">
+          <h2>Prediction Result</h2>
+
+        </div>
+        <div id="result" class="result empty">
+          <p>Prediction output will appear here.</p>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="section-head">
+          <h2>Prediction History</h2>
+          <button id="load-history-btn" class="ghost-btn">Reload</button>
+        </div>
+        <div id="history" class="list-block"></div>
+      </section>
+      <section class="card">
+        <div class="section-head">
+          <h2>Today's BBC News</h2>
+          <button id="collect-bbc-btn" class="ghost-btn">Collect Latest</button>
+        </div>
+        <div id="bbc-news" class="list-block"></div>
+      </section>
+    </main>
+  </div>
+
+  <script src="/static/app.js?v=2"></script>
+</body>
+</html>
